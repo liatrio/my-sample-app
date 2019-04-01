@@ -4,6 +4,6 @@ COPY . .
 RUN mvn clean package
 
 FROM openjdk:11-jre-stretch
-COPY --from=builder /app/target/sample-app-api.jar /app/
+COPY --from=builder /app/target/my-sample-app.jar /app/
 EXPOSE 8080
-ENTRYPOINT java -jar /app/sample-app-api.jar
+ENTRYPOINT java -jar /app/my-sample-app.jar

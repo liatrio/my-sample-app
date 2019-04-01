@@ -7,7 +7,7 @@ build:
     docker: {}
   tagPolicy:
     envTemplate:
-      template: '{{.DOCKER_REGISTRY}}/liatrio/sample-app-api:{{.VERSION}}'
+      template: '{{.DOCKER_REGISTRY}}/liatrio/my-sample-app:{{.VERSION}}'
   local: {}
 deploy:
   kubectl: {}
@@ -18,13 +18,13 @@ profiles:
     - docker: {}
     tagPolicy:
       envTemplate:
-        template: '{{.DOCKER_REGISTRY}}/liatrio/sample-app-api:{{.DIGEST_HEX}}'
+        template: '{{.DOCKER_REGISTRY}}/liatrio/my-sample-app:{{.DIGEST_HEX}}'
     local: {}
   deploy:
     helm:
       releases:
-      - name: sample-app-api
-        chartPath: charts/sample-app-api
+      - name: my-sample-app
+        chartPath: charts/my-sample-app
         setValueTemplates:
-          image.repository: '{{.DOCKER_REGISTRY}}/liatrio/sample-app-api'
+          image.repository: '{{.DOCKER_REGISTRY}}/liatrio/my-sample-app'
           image.tag: '{{.DIGEST_HEX}}'

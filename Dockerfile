@@ -1,4 +1,4 @@
 FROM openjdk:11-jre-stretch
-COPY target/sample-app-api.jar /app/
+COPY target/my-sample-app.jar /app/
 EXPOSE 8080
-ENTRYPOINT java -jar /app/sample-app-api.jar
+ENTRYPOINT java -jar /app/my-sample-app.jar
