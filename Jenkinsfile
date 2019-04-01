@@ -1,4 +1,4 @@
-library 'pipeline-library-takumi'
+library 'temp-pipeline-lib'
 
 pipeline {
     agent {
